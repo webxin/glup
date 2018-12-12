@@ -23,6 +23,7 @@ gulp.task("build",function(callback){
 
 gulp.task("sass",function(){
    return   gulp.src("app/scss/**/*.scss")
+   .pipe(plumber())
    .pipe(sass())
    .pipe(gulp.dest("app/css"))
    .pipe(browserSync.reload({
